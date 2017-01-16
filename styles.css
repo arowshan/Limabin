@@ -6,7 +6,7 @@ p {
     font-size: 16px;
 }
 
-.bg-1 {
+.robot {
     position: relative; 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
