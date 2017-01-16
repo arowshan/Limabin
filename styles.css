@@ -6,7 +6,7 @@ p {
     font-size: 16px;
 }
 
-.bg-1 {
+.robot {
     position: relative; 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
@@ -39,35 +39,7 @@ p {
 
 .circle{
     position: absolute;
-    width: 70px;
-	height: 70px;
 	background: red;
-	border-radius: 35px;
-}
-
-.circle-1{
-    top: 0;
-    left: 200px;
-}
-.circle-2{
-    top: 200px;
-    left: 150px;
-}
-.circle-3{
-    top: 0;
-    left: 0;
-}
-.circle-4{
-    top: 0;
-    left: 0;
-}
-
-.circle-1 {
-    background-color: red;
-    animation-name: move;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
 }
 
 @keyframes move {
