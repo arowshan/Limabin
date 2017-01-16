@@ -1,44 +1,86 @@
 body {
-      font: 20px Montserrat, sans-serif;
-      line-height: 1.8;
-      color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-  }
-  .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-      color: #1abc9c !important;
-  }
+    font: 20px Montserrat, sans-serif;
+    color: #f5f6f7;
+}
+p {
+    font-size: 16px;
+}
 
-  .icon{
-	  height: 40px;
-	  width: auto;
-  }
+.bg-1 {
+    position: relative; 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+.container-fluid {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+.icon{
+    height: 40px;
+    width: auto;
+}
+
+.circle{
+    position: absolute;
+    width: 70px;
+	height: 70px;
+	background: red;
+	border-radius: 35px;
+}
+
+.circle-1{
+    top: 0;
+    left: 200px;
+}
+.circle-2{
+    top: 200px;
+    left: 150px;
+}
+.circle-3{
+    top: 0;
+    left: 0;
+}
+.circle-4{
+    top: 0;
+    left: 0;
+}
+
+.circle-1 {
+    background-color: red;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes move {
+    0%   {background-color:red; left:0px; top:0px; opacity:0;}
+    10%  {background-color:yellow; left:10%; top:3px;}
+    20%  {background-color:blue; left:20%; top:1px;}
+    30%  {background-color:green; left:30%; top:3px;}
+    40% {background-color:red; left:40%; top:5px;}
+    50%  {background-color:yellow; left:50%; top:2px; opacity:1;}
+    60%  {background-color:blue; left:60%; top:1px;}
+    70%  {background-color:green; left:70%; top:6px;}
+    80% {background-color:red; left:80%px; top:2px;}
+    90%  {background-color:green; left:90%; top:0px;}
+    100% {background-color:red; left:92px; top:2px; opacity:0;}
+
+}
