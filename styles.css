@@ -41,7 +41,9 @@ p {
     position: absolute;
 	background: red;
 }
-
+.message{
+	display: none;
+}
 @keyframes move {
     0%   {background-color:red; left:0px; top:0px; opacity:0;}
     10%  {background-color:yellow; left:10%; top:3px;}

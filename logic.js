@@ -1,7 +1,11 @@
+var message = [
+	'I am a nice guy',
+	'I have a good sense of humor. At least I think so...'
+]
 $(document).ready(function(){
 //Generate html circles
-	for(var i=0; i<50; i++){
-		$('.robot').append('<div class="circle"></div>');
+	for(var i=0; i<2; i++){
+		$('.robot').append('<div class="circle"><span class="message">'+message[i]+'</span></div>');
 	}
 
 //Size & Position circles randomly	
@@ -60,8 +64,13 @@ $(document).ready(function(){
 	});
 	
 	//Circle message
-	$('.circle').hover(function(){
+	$('.circle').mouseenter(function(){
 		$(this).css({background:"yellow"});
+		$(this).children().css({display:"inline-block"})
+	});
+	$('.circle').mouseleave(function(){
+		$(this).css({background:"red"});
+		$(this).children().css({display:"none"})
 	});
 		
 		
