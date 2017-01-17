@@ -28,19 +28,21 @@ var message = [
 	'q',	
 ];
 //Generate html circles
-	for(var i=0; i<20; i++){
+	for(var i=0; i<50; i++){
 		$('.robot').append('<div class="circle"><div class="message">'+message[i]+'</div></div>');
 	}
 
 //Size & Position circles randomly
 	
-	var min_x = 0;
-	var max_x = 80;
+	var min_x = -100;
+	var max_x = 0;
 	var min_y = 0;
 	var max_y = 100;
 	var min_width = 5;
 	var max_width = 100;
 	var filled_areas = new Array();
+	var min_time = 10000;
+	var max_time = 100000;
 	
 
 	$('.circle').each(function() {
@@ -85,24 +87,25 @@ var message = [
 	
 	function setupCircles(pixels) {
 		function runAnimation() {
-			$('.circle').animate({ left: '+='+pixels+'px' }, 
+			$('.circle').each(function(){
+			animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));
+			console.log(animateTime);			
+			// $(this).animate({ left: '+='+pixels+'px' },
+			$(this).animate({ left: '2000px' },
 				{
-				duration: 2000,
-				easing: 'swing', 
+				duration: animateTime,
+				easing: 'linear', 
 				complete: function(){
 					// console.log($('.circle').position().left);
 					// if($('.circle').position().left>1000){
 						// $('.circle').css({left: "10px"});
 						// sprinkleCircles();
-						$('.circle').each(function() {
-							var rand_x=0;
-							var rand_y=0;
-							rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
-							rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
-							$(this).css({left:rand_x + '%', top: rand_y + '%'});
-						});
+						rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
+						rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
+						$(this).css({left:rand_x + '%', top: rand_y + '%'});
 						runAnimation();
 					} 
+				});
 				});
 			}
 
@@ -118,6 +121,6 @@ var message = [
 		
 		runAnimation();
 	}
-	setupCircles(1000);
+	setupCircles(2500);
 			
 });
