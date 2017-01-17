@@ -3,8 +3,22 @@ body {
     color: #f5f6f7;
     overflow: hidden;
 }
+nav{
+	height:10vh:
+}
+.container-fluid{
+	padding-top: 10px;
+    padding-bottom: 50px;
+	height:80vh;
+}
 p {
     font-size: 16px;
+}
+
+footer { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+	height:10vh:
 }
 .robot {
     position: relative; 
@@ -16,14 +30,7 @@ p {
 	z-index: 5;
 	pointer-events: none;
 }
-.bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
-}
-.container-fluid {
-    padding-top: 10px;
-    padding-bottom: 50px;
-}
+
 .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -32,6 +39,7 @@ p {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+	height:10%:
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -45,28 +53,10 @@ p {
 .circle{
     position: absolute;
 	background: red;
-    opacity: 0.3;
-    /*animation-name: move;
-    animation-duration: 4s;
-    animation-iteration-count: 3;
-    animation-direction: alternate; */
+    opacity: 0.5;
 }
 .message{
 	display: none;
     white-space: nowrap;
     background: darkslategray;
-}
-@keyframes move {
-    0%   {background-color:red; left:""; top:"+=10px"; }
-    /*10%  {background-color:yellow; left:10%; top:3px;}
-    20%  {background-color:blue; left:20%; top:1px;}
-    30%  {background-color:green; left:30%; top:3px;}
-    40% {background-color:red; left:40%; top:5px;}*/
-    /*50%  {background-color:yellow; left:"+=200px"; top:"+=-5px";}*/
-    /*60%  {background-color:blue; left:60%; top:1px;}
-    70%  {background-color:green; left:70%; top:6px;}
-    80% {background-color:red; left:80%px; top:2px;}
-    90%  {background-color:green; left:90%; top:0px;}*/
-    100% {background-color:red; left:100%; top:"+=8px";}
-
 }

@@ -88,10 +88,9 @@ var message = [
 	function setupCircles(pixels) {
 		function runAnimation() {
 			$('.circle').each(function(){
-			animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));
-			console.log(animateTime);			
+			animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));			
 			// $(this).animate({ left: '+='+pixels+'px' },
-			$(this).animate({ left: '2000px' },
+			$(this).animate({ left: '120%' },
 				{
 				duration: animateTime,
 				easing: 'linear', 
