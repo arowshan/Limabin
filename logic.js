@@ -1,10 +1,10 @@
 $(document).ready(function(){
 var message = [
-	'I am a nice guy',
-	'I have a good sense of humor. At least I think so...',
-	'a',
-	'a',
-	'aa',
+	'He is a nice guy. He told me himself.',
+	'He has a good sense of humor. At least I think so...',
+	'You must have a lot of free time!',
+	'He is a self learner web developer',
+	'His favorite color is red or black or maybe orange. I dont know... who cares!',
 	'w',
 	'q',
 	'q',
@@ -12,6 +12,7 @@ var message = [
 	'q',
 	'q',
 	'q',
+	'Catching bubbles? huh!',
 	'q',
 	'q',
 	'q',
@@ -20,8 +21,7 @@ var message = [
 	'q',
 	'q',
 	'q',
-	'q',
-	'q',
+	'Do you get paid to do this?',
 	'q',
 	'q',
 	'q',
@@ -37,7 +37,7 @@ var message = [
 	var min_x = -100;
 	var max_x = 0;
 	var min_y = 0;
-	var max_y = 100;
+	var max_y = 80;
 	var min_width = 5;
 	var max_width = 100;
 	var filled_areas = new Array();
