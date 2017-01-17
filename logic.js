@@ -1,21 +1,47 @@
+$(document).ready(function(){
 var message = [
 	'I am a nice guy',
-	'I have a good sense of humor. At least I think so...'
-]
-$(document).ready(function(){
+	'I have a good sense of humor. At least I think so...',
+	'a',
+	'a',
+	'aa',
+	'w',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',
+	'q',	
+];
 //Generate html circles
-	for(var i=0; i<2; i++){
-		$('.robot').append('<div class="circle"><span class="message">'+message[i]+'</span></div>');
+	for(var i=0; i<20; i++){
+		$('.robot').append('<div class="circle"><div class="message">'+message[i]+'</div></div>');
 	}
 
-//Size & Position circles randomly	
+//Size & Position circles randomly
+	
 	var min_x = 0;
-	var max_x = 100;
+	var max_x = 80;
 	var min_y = 0;
 	var max_y = 100;
 	var min_width = 5;
 	var max_width = 100;
 	var filled_areas = new Array();
+	
 
 	$('.circle').each(function() {
 		var rand_x=0;
@@ -34,6 +60,7 @@ $(document).ready(function(){
 		
 		$(this).css({left:rand_x + '%', top: rand_y + '%', width: rand_width, height: rand_width, borderRadius:borderRadius});
 	});
+
 	//Check for overlapping
 	function check_overlap(area) {
 		for (var i = 0; i < filled_areas.length; i++) {
@@ -56,22 +83,41 @@ $(document).ready(function(){
 		return false;
 	}
 	
-	//Animate circles
-	$('.robot').hover(function(){
-		$('.circle').animate({"left": "+=10px"}, 100, "linear", function(){
-			$('.circle').animate({"left": "+=-10px"}, 100, "linear");
+	function setupCircles(pixels) {
+		function runAnimation() {
+			$('.circle').animate({ left: '+='+pixels+'px' }, 
+				{
+				duration: 2000,
+				easing: 'swing', 
+				complete: function(){
+					// console.log($('.circle').position().left);
+					// if($('.circle').position().left>1000){
+						// $('.circle').css({left: "10px"});
+						// sprinkleCircles();
+						$('.circle').each(function() {
+							var rand_x=0;
+							var rand_y=0;
+							rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
+							rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
+							$(this).css({left:rand_x + '%', top: rand_y + '%'});
+						});
+						runAnimation();
+					} 
+				});
+			}
+
+		$('.circle').hover(function() {
+			$(this).pause();	
+			$(this).css({background:"yellow"});
+			$(this).children().css({display:"inline-block"})
+		}, function() {
+			$(this).resume();
+			$(this).css({background:"red"});
+			$(this).children().css({display:"none"})
 		});
-	});
-	
-	//Circle message
-	$('.circle').mouseenter(function(){
-		$(this).css({background:"yellow"});
-		$(this).children().css({display:"inline-block"})
-	});
-	$('.circle').mouseleave(function(){
-		$(this).css({background:"red"});
-		$(this).children().css({display:"none"})
-	});
 		
-		
+		runAnimation();
+	}
+	setupCircles(1000);
+			
 });

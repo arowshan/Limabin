@@ -1,15 +1,20 @@
 body {
     font: 20px Montserrat, sans-serif;
     color: #f5f6f7;
+    overflow: hidden;
 }
 p {
     font-size: 16px;
 }
-
 .robot {
     position: relative; 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
+}
+.robot-cartoon{
+	position:relative;
+	z-index: 5;
+	pointer-events: none;
 }
 .bg-4 { 
     background-color: #2f2f2f; /* Black Gray */
@@ -40,21 +45,28 @@ p {
 .circle{
     position: absolute;
 	background: red;
+    opacity: 0.3;
+    /*animation-name: move;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    animation-direction: alternate; */
 }
 .message{
 	display: none;
+    white-space: nowrap;
+    background: darkslategray;
 }
 @keyframes move {
-    0%   {background-color:red; left:0px; top:0px; opacity:0;}
-    10%  {background-color:yellow; left:10%; top:3px;}
+    0%   {background-color:red; left:""; top:"+=10px"; }
+    /*10%  {background-color:yellow; left:10%; top:3px;}
     20%  {background-color:blue; left:20%; top:1px;}
     30%  {background-color:green; left:30%; top:3px;}
-    40% {background-color:red; left:40%; top:5px;}
-    50%  {background-color:yellow; left:50%; top:2px; opacity:1;}
-    60%  {background-color:blue; left:60%; top:1px;}
+    40% {background-color:red; left:40%; top:5px;}*/
+    /*50%  {background-color:yellow; left:"+=200px"; top:"+=-5px";}*/
+    /*60%  {background-color:blue; left:60%; top:1px;}
     70%  {background-color:green; left:70%; top:6px;}
     80% {background-color:red; left:80%px; top:2px;}
-    90%  {background-color:green; left:90%; top:0px;}
-    100% {background-color:red; left:92px; top:2px; opacity:0;}
+    90%  {background-color:green; left:90%; top:0px;}*/
+    100% {background-color:red; left:100%; top:"+=8px";}
 
 }
