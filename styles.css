@@ -54,4 +54,5 @@ footer {
 	display: none;
     white-space: nowrap;
     background: darkslategray;
+	border: 1px solid;
 }

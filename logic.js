@@ -86,8 +86,8 @@ var message = [
 	}
 	
 	function setupCircles(pixels) {
-		function runAnimation() {
-			$('.circle').each(function(){
+		function runAnimation(x) {
+			$(x).each(function(){
 			animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));			
 			// $(this).animate({ left: '+='+pixels+'px' },
 			$(this).animate({ left: '120%' },
@@ -102,7 +102,7 @@ var message = [
 						rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
 						rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
 						$(this).css({left:rand_x + '%', top: rand_y + '%'});
-						runAnimation();
+						runAnimation(this);
 					} 
 				});
 				});
@@ -118,7 +118,7 @@ var message = [
 			$(this).children().css({display:"none"})
 		});
 		
-		runAnimation();
+		runAnimation('.circle');
 	}
 	setupCircles(2500);
 			
