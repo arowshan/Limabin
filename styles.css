@@ -1,29 +1,32 @@
 body {
     font: 20px Montserrat, sans-serif;
-    color: #f5f6f7;
     overflow: hidden;
-}
-nav{
-	height:10vh;
-}
-.container-fluid{
-	padding-top: 10px;
-    padding-bottom: 10px;
-	height:70vh;
 }
 p {
     font-size: 16px;
 }
 
-footer { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
-	height:10vh;
+.menu-bar{
+    font-size: 12px;
+	height: 70px;
+	line-height:70px;
+	vertical-align: middle;
+}
+.nav{
+	padding-left:30px;
+	padding-right:30px;
+}
+.nav-brand{
+	display: inline-block;
+	letter-spacing: 5px;
 }
 .robot {
     position: relative; 
-    background-color: #1abc9c; /* Green */
+    /* background-color: #1abc9c; */
+	background-image: url("images/3d.jpg");
     color: #ffffff;
+	text-align: center;
+	height: 450px;
 }
 .robot-cartoon{
 	position:relative;
@@ -31,18 +34,10 @@ footer {
 	pointer-events: none;
 }
 
-.navbar {
-    padding-top: 2px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-
 .icon{
     height: 40px;
     width: auto;
+	vertical-align:middle;
 }
 
 .circle{
@@ -50,16 +45,21 @@ footer {
 	background: red;
     opacity: 0.5;
 }
+.purpose{
+	color: black;
+	white-space: nowrap;
+}
 .message{
 	display: none;
     white-space: nowrap;
-    background: darkslategray;
+    background: #433E3E;
 	border: 1px solid;
     border-radius: 5px;
     padding: 10px;
     position: absolute;
 	top:-50px;
 	left:0px;
+	line-height:20px;
 }
 
 .message .arrow {
@@ -73,7 +73,7 @@ footer {
     bottom: -8px;
 }
 .bottom:after {
-    border-color: darkslategray transparent transparent transparent;
+    border-color: #433E3E transparent transparent transparent;
     border-style: solid;
     border-width: 7px 7px 0px 7px;
     bottom: 1px;

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 //Generate html circles
-	for(var i=0; i<50; i++){
+	for(var i=0; i<35; i++){
 		$('.robot').append('<div class="circle"><div class="message"><div class="arrow bottom right"></div>'+message[i]+'</div></div>');
 	}
 
