@@ -1,35 +1,7 @@
 $(document).ready(function(){
-var message = [
-	'He is a nice guy. He told me himself.',
-	'He has a good sense of humor. At least I think so...',
-	'You must have a lot of free time!',
-	'He is a self learner web developer',
-	'His favorite color is red or black or maybe orange. I dont know... who cares!',
-	'w',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'Catching bubbles? huh!',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'q',
-	'Do you get paid to do this?',
-	'q',
-	'q',
-	'q',
-	'q',	
-];
 //Generate html circles
 	for(var i=0; i<50; i++){
-		$('.robot').append('<div class="circle"><div class="message">'+message[i]+'</div></div>');
+		$('.robot').append('<div class="circle"><div class="message"><div class="arrow bottom right"></div>'+message[i]+'</div></div>');
 	}
 
 //Size & Position circles randomly
