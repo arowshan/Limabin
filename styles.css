@@ -27,6 +27,7 @@ p {
     color: #ffffff;
 	text-align: center;
 	height: 450px;
+	margin-bottom:100px;
 }
 .robot-cartoon{
 	position:relative;
@@ -80,4 +81,10 @@ p {
     content: "";
     position: absolute;
     left: -7px;
+}
+
+.pic{
+	width: 180px;
+	height: 100px;
+	margin:20px;
 }

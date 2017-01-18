@@ -93,5 +93,8 @@ $(document).ready(function(){
 		runAnimation('.circle');
 	}
 	setupCircles(2500);
+	$('.pic').click(function(){
+		$(".robot").css("background-image", "url('"+$(this)[0].src+"')");
+	});
 			
 });
