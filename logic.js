@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //Generate html circles
 	for(var i=0; i<35; i++){
-		$('.robot').append('<div class="circle"><div class="message"><div class="arrow bottom right"></div>'+message[i]+'</div></div>');
+		$('.robot').append('<div class="circle"><div class="message"><div class="arrow speech-triangle right"><div class="empty-triangle"></div></div>'+message[i]+'</div></div>');
 	}
 
 //Size & Position circles randomly
@@ -79,21 +79,35 @@ $(document).ready(function(){
 				});
 				});
 			}
-
+// css({"border-left-width":""+$(this).find('.message').width()+"px"});
 		$('.circle').hover(function() {
-			$(this).pause();	
-			$(this).css({background:"yellow"});
+			$(this).pause();
+			if($(this).position().left/$(window).width() * 100 > 50){
+				$(this).find('.message').css({display:"inline-block", right:"0px", left:''});
+				var leftOffset = $(this).find('.message').width()-15 + "px";
+				$(this).find('.speech-triangle').css({left:leftOffset});
+			}
+			$(this).css({background:"rgba(255,255,0, 0.7)"});
 			$(this).children().css({display:"inline-block"})
 		}, function() {
 			$(this).resume();
-			$(this).css({background:"red"});
-			$(this).children().css({display:"none"})
+			$(this).css({background:"rgba(255,0,0, 0.7)"});
+			$(this).children().css({display:"none"});
+			$(this).find('.message').css({right:'', left:"0px"});
+			$(this).find('.speech-triangle').css({left:'15px'});
 		});
 		
 		runAnimation('.circle');
 	}
 	setupCircles(2500);
 	$('.pic').click(function(){
+		if($(this).attr('id')=='wood'){
+			console.log("here");
+			$('.robot').css({"background-size":''});
+			}
+		else{
+			$('.robot').css({"background-size":'cover'});
+			}
 		$(".robot").css("background-image", "url('"+$(this)[0].src+"')");
 	});
 			
