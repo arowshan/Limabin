@@ -6,7 +6,6 @@ var message = [
 	'His favorite color is red or black or maybe orange.<br>I dont know... who cares!',
 	'He likes coffee. You can probably pay him in coffee beans.',
 	'He likes new js frameworks like Angular2.',
-	'I can\'t believe you\'re still doing this.',
 	'He likes his work to have an impact. Whatever that means!',
 	'He\'s better than you in soccer. And pingpong and chess and volleyball. <br> Unless, you\'re really good at all of those.',
 	'He likes technical work a lot, but wants to do more than just technical work.',
@@ -22,9 +21,10 @@ var message = [
 	'Arash enjoys being active.',
 	'Do you get paid to do this?',
 	'Arash loves his fiance. His fiance loves him. Nobody loves me though. Sigh....',
-	'Arash can work independently or in a team. He\'d definitely enjoy good, fun, creative, easy going team members.',
+	'Arash can work independently or in a team. He doesn\'t need explicit instructions but appreciates feedback.',
 	'Arash does not like to be micromanaged.',
 	'My friends call me UB Bot.',
+	'I can\'t believe you\'re still doing this.',
 	'When someone doesn\'t believe Arash is not a vegeterian, he bites them to prove it. <br> Just kidding, he doesn\'t do that. Not at the workplace at least.',
 	'Fun fact: Arash studied architecture and design for two years.',
 	'Arash recently learned that common senes is not very common.',
@@ -34,5 +34,4 @@ var message = [
 	'Arash and his fiance are planning to buy a house. <br>Would you like to give Arash a lot of money? It would make him happy.',
 	'These smart engineers made me, but somehow I ended up cross eyed!',
 	'Arash doesn\'t let deadlines control him. Deadlines don\'t like Arash. Arash beats deadlines. <br> In general, it\'s a pretty messed up relationship between them.',
-	
 ];

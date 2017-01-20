@@ -1,46 +1,49 @@
 $(document).ready(function(){
+	
 //Generate html circles
-	for(var i=0; i<35; i++){
-		$('.robot').append('<div class="circle"><div class="message"><div class="arrow speech-triangle right"><div class="empty-triangle"></div></div>'+message[i]+'</div></div>');
+	for(var i=0; i<circleCount; i++){
+		$('.robot').append(
+			'<div class="circle">\
+				<div class="message">\
+					<div class="arrow speech-triangle right">\
+						<div class="empty-triangle">\
+						</div>\
+					</div>\
+				'+message[i]+'</div>\
+			</div>'
+		);
 	}
 
 //Size & Position circles randomly
-	
-	var min_x = -100;
-	var max_x = 0;
-	var min_y = 25;
-	var max_y = 80;
-	var min_width = 5;
-	var max_width = 100;
 	var filled_areas = new Array();
-	var min_time = 10000;
-	var max_time = 100000;
-	
-
 	$('.circle').each(function() {
+		//coordiates of filled areas
 		var rand_x=0;
 		var rand_y=0;
 		var rand_width=0;
 		var area;
 		do {
+			//random positioning of circles
 			rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
 			rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));
+			//randomize circle size
 			rand_width = Math.round(min_width + ((max_width - min_width)*(Math.random() % 1)));
+			//round square to circle
 			borderRadius = rand_width/2;
 			area = {x: rand_x, y: rand_y, width: $(this).width(), height: $(this).height()};
 		} while(check_overlap(area));
 		
 		filled_areas.push(area);
-		
+		//implement the changes on each circle
 		$(this).css({left:rand_x + '%', top: rand_y + '%', width: rand_width, height: rand_width, borderRadius:borderRadius});
 	});
 
 	//Check for overlapping
 	function check_overlap(area) {
 		for (var i = 0; i < filled_areas.length; i++) {
-        
-			check_area = filled_areas[i];
 			
+			check_area = filled_areas[i];
+			//coordinates of filled areas
 			var bottom1 = area.y + area.height;
 			var bottom2 = check_area.y + check_area.height;
 			var top1 = area.y;
@@ -57,49 +60,64 @@ $(document).ready(function(){
 		return false;
 	}
 	
-	function setupCircles(pixels) {
-		function runAnimation(x) {
-			$(x).each(function(){
-			animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));			
-			// $(this).animate({ left: '+='+pixels+'px' },
-			$(this).animate({ left: '120%' },
+	function setupCircles() {
+		//Animatie circles
+		function runAnimation(circles) {
+			//Animate each circle independently
+			$(circles).each(function(){
+				//vary random animate times
+				animateTime = Math.round(min_time + ((max_time - min_time)*(Math.random() % 1)));
+				//wait till circles exit the screen
+				$(this).animate({ left: stoppingPoint },
 				{
-				duration: animateTime,
-				easing: 'linear', 
-				complete: function(){
-					// console.log($('.circle').position().left);
-					// if($('.circle').position().left>1000){
-						// $('.circle').css({left: "10px"});
-						// sprinkleCircles();
-						rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
-						rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
-						$(this).css({left:rand_x + '%', top: rand_y + '%'});
-						runAnimation(this);
+					duration: animateTime,
+					easing: 'linear',
+					//Reposition and re-animate
+					complete: function(){
+							//randomize position again
+							rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
+							rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));						
+							$(this).css({left:rand_x + '%', top: rand_y + '%'});
+							runAnimation(this);
 					} 
 				});
-				});
-			}
-// css({"border-left-width":""+$(this).find('.message').width()+"px"});
+			});
+		}
+		
+		//Show message/color and pause on hover
 		$('.circle').hover(function() {
+			//pause animation
 			$(this).pause();
-			if($(this).position().left/$(window).width() * 100 > 50){
+			//flip message position once passed middle point
+			if($(this).position().left/$(window).width() * fullWidth > middleFlippingPoint){
+				//show message
 				$(this).find('.message').css({display:"inline-block", right:"0px", left:''});
-				var leftOffset = $(this).find('.message').width()-15 + "px";
+				//position speech bubble triangle
+				var leftOffset = $(this).find('.message').width() - triangleOffset + "px";
 				$(this).find('.speech-triangle').css({left:leftOffset});
 			}
-			$(this).css({background:"rgba(255,255,0, 0.7)"});
+			//change color
+			$(this).css({background:hoveredCircleColor});
+			//show message 
 			$(this).children().css({display:"inline-block"})
 		}, function() {
+			//Resume animation
 			$(this).resume();
-			$(this).css({background:"rgba(255,0,0, 0.7)"});
+			//return to original color
+			$(this).css({background:originalCircleColor});
+			//hide message
 			$(this).children().css({display:"none"});
+			//reposition speech box
 			$(this).find('.message').css({right:'', left:"0px"});
-			$(this).find('.speech-triangle').css({left:'15px'});
+			$(this).find('.speech-triangle').css({left:triangleLeftOffset});
 		});
 		
 		runAnimation('.circle');
 	}
-	setupCircles(2500);
+	
+	setupCircles();
+	
+	//Change backgrounds
 	$('.pic').click(function(){
 		$(".robot").css("background-image", "url('"+$(this)[0].src+"')");
 	});
