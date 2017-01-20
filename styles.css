@@ -18,9 +18,13 @@ body {
 	display: inline-block;
 	letter-spacing: 5px;
 }
+.intro{
+    text-shadow: -1px 0 #555555, 0 1px #555555, 1px 0 #555555, 0 -1px #555555;
+}
 .robot {
     position: relative;
-	background-image: url("images/3d.jpg");
+    background-size:cover;
+	background-image: url("images/charcoal-wall.jpg");
     color: #ffffff;
 	text-align: center;
 	height: 450px;

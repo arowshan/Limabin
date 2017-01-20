@@ -8,7 +8,7 @@ $(document).ready(function(){
 	
 	var min_x = -100;
 	var max_x = 0;
-	var min_y = 0;
+	var min_y = 25;
 	var max_y = 80;
 	var min_width = 5;
 	var max_width = 100;
@@ -101,13 +101,6 @@ $(document).ready(function(){
 	}
 	setupCircles(2500);
 	$('.pic').click(function(){
-		if($(this).attr('id')=='wood'){
-			console.log("here");
-			$('.robot').css({"background-size":''});
-			}
-		else{
-			$('.robot').css({"background-size":'cover'});
-			}
 		$(".robot").css("background-image", "url('"+$(this)[0].src+"')");
 	});
 			
