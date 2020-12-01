@@ -30,6 +30,8 @@ var message = [
   "Arash recently learned that common sense is not very common.",
   "Arash is a problem solver.",
   "I'm starting to get sick of talking about Arash.",
+  "00010101010010010... oh sorry, I was speaking in my native language",
   "These smart engineers made me, but somehow I ended up cross eyed!",
-  "Arash doesn't let deadlines control him. Deadlines don't like Arash. Arash beats deadlines. <br> In general, it's a pretty messed up relationship between them."
+  "Arash doesn't let deadlines control him. Deadlines don't like Arash. Arash beats deadlines. <br> In general, it's a pretty messed up relationship between them.",
+  "Arash thinks technology has outpaced empathy. So he... whoops sorry, started getting a little serious there."
 ];
